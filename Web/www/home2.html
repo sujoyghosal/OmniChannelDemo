@@ -1,0 +1,286 @@
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+  <script type="text/javascript">
+    var count = 0;
+
+    function run() {
+      x = setInterval(function() {
+        if (count >= 1000000000) {
+          clearInterval(x);
+          return;
+        }
+        document.getElementById("countDownText").innerHTML = ++count;
+      }, 1000);
+    }
+
+  </script>
+
+  <style>
+    .circle {
+      width: 200px;
+      height: 200px;
+      line-height: 150px;
+      border-radius: 50%;
+      font-size: 20px;
+      color: #fff;
+      text-align: center;
+      background: #000;
+      /*border-image: linear-gradient(#f6b73c, #4d9f0c) 50; */
+      border-color: blue;
+      border-width: 20px;
+      border-style: solid;
+    }
+    .circle-green {
+      width: 200px;
+      height: 200px;
+      line-height: 150px;
+      border-radius: 50%;
+      font-size: 20px;
+      color: #acd310;
+      text-align: center;
+      background: #000;
+      /*border-image: linear-gradient(#f6b73c, #4d9f0c) 50; */
+      border-color: rgb(7, 235, 7);
+      border-width: 20px;
+      border-style: solid;
+    }
+    .circle-yellow {
+      width: 200px;
+      height: 200px;
+      line-height: 150px;
+      border-radius: 50%;
+      font-size: 20px;
+      color: #fff;
+      text-align: center;
+      background: #000;
+      /*border-image: linear-gradient(#f6b73c, #4d9f0c) 50; */
+      border-color: yellow;
+      border-width: 20px;
+      border-style: solid;
+    }
+    .circle-red {
+      width: 200px;
+      height: 200px;
+      line-height: 150px;
+      border-radius: 50%;
+      font-size: 20px;
+      color: #fff;
+      text-align: center;
+      background: #000;
+      /*border-image: linear-gradient(#f6b73c, #4d9f0c) 50; */
+      border-color: rgb(241, 7, 7);
+      border-width: 20px;
+      border-style: solid;
+    }
+    .circle-pink {
+      width: 200px;
+      height: 200px;
+      line-height: 150px;
+      border-radius: 50%;
+      font-size: 20px;
+      color: #e4089e;
+      text-align: center;
+      background: #000;
+      /*border-image: linear-gradient(#f6b73c, #4d9f0c) 50; */
+      /*border-color: #f0063d;*/
+      border-color: #e4089e;
+      border-width: 20px;
+      border-style: solid;
+    }
+    #countDownText {
+      font-size: 20px;
+      font-weight:400;
+      /*color: rgb(22, 190, 208);*/
+      color: #f0f009;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  /*    -webkit-animation: glow 1s ease-in-out infinite alternate;
+      -moz-animation: glow 1s ease-in-out infinite alternate;
+      animation: glow 1s ease-in-out infinite alternate;*/
+    }
+    #transactionText {
+      font-size: 15px;
+      font-weight:200;
+      /*color: rgb(22, 190, 208);*/
+      color: #f00971;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  /*    -webkit-animation: glow 1s ease-in-out infinite alternate;
+      -moz-animation: glow 1s ease-in-out infinite alternate;
+      animation: glow 1s ease-in-out infinite alternate;*/
+    }
+
+    .wrapper {
+      background-color: #000;
+      width: fit-content;
+      padding: 25px;
+    }
+
+    @-webkit-keyframes glow {
+      from {
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+      }
+
+      to {
+        text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+      }
+    }
+
+    body {
+      background-color: #000007;
+    }
+
+    
+    h2 {
+      color: rgb(46, 233, 17);
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      font-size: large;
+      font-weight: 200;
+    }
+    h4 {
+      color: rgb(46, 233, 17);
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      font-size: medium;
+      font-weight: 200;
+    }
+    h1 {
+      color: rgb(46, 233, 17);
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      font-weight: 200;
+    }
+    .toolbar {
+            position: sticky;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 120px;
+            display: flex;
+            align-items: center;
+            background-color: #000000;
+            color: white;
+            font-weight: 600;
+            padding: 0 9px;
+            z-index: 60;
+        }
+
+        .toolbar h2 {
+            margin-top: 25px;
+            cursor: pointer;
+        }
+
+        .logo {
+            background-image: url('img/header-logo-white.svg');
+            width: 200px;
+            height: 60px;
+            background-repeat: no-repeat;
+            cursor: pointer;
+        }
+  </style>
+  
+</head>
+
+<body ng-controller="DashboardCtrl">
+  <div class="toolbar" role="banner" style="width: 1100px">
+    <div class="logo"></div>
+    <h2><b>WebSocket Demo for Customer Account Overview Page</b></h2>
+    <div class="spacer"></div>
+  </div>
+
+
+  <div data-ng-init="setupWebSockets('init', null)">
+    <h4>Account Summary</h4>
+    <table>
+      <tr style="border: thin solid rgb(220, 16, 16)">
+        <td>
+          <div class="wrapper">
+              <h4 align="center">Current Account Balance</h4>
+              <div class="circle">
+              <span id="countDownText">{{current_account_balance}}</span>
+              </div>
+          </div>
+        </td>
+        <td>
+          <div class="wrapper">
+              <h4 align="center">Savings Account Balance</h4>
+              <div class="circle">
+              <span id="countDownText">{{savings_account_balance}}</span>
+              </div>
+          </div>
+        </td>
+        <!--<td ng-hide="context_source_type=='java'">-->
+        <td>
+          <div class="wrapper">
+              <h4 align="center">Credit Card Balance</h4>
+              <div class="circle">
+              <span id="countDownText">{{credit_card_balance}}</span>
+              </div>
+          </div>
+        </td>
+         <!--<td ng-hide="context_source_type=='java'">-->
+        <td>
+          <div class="wrapper">
+              <h4 align="center">Next Bill Payment Date</h4>
+              <div class="circle">
+              <span id="countDownText">{{'29 JUN 2023'}}</span>
+              </div>
+          </div>
+        </td>
+      </tr>
+      <tr><td><h4>Recent Current Account Transactions</h4></td></tr>
+          <tr style="border: thin solid rgb(220, 16, 16)" ng-repeat="row in transactionsData | orderBy: 'create_time': 'desc'">
+            <td>
+              <div class="wrapper">               
+                  <span id="transactionText">{{row.merchant_name}}</span>
+              </div>
+            </td>
+            <td>
+              <div class="wrapper">               
+                  <span id="transactionText">{{row.merchant_address}}</span>
+              </div>
+            </td>
+            <td>
+              <div class="wrapper">               
+                  <span id="transactionText">{{row.transaction_currency + ' ' + row.transaction_amount}}</span>
+              </div>
+            </td>
+            <td>
+              <div class="wrapper">               
+                  <span id="transactionText">{{row.create_time | date:'medium'}}</span>
+              </div>
+            </td>
+          </tr>
+    </table>
+    <br>
+    <!--<h4>Recent Current Account Transactions</h4>
+      <table>
+        <tr style="border: thin solid rgb(220, 16, 16)" ng-repeat="row in transactionsData | orderBy: 'create_time': 'desc'">
+          <td>
+            <div class="wrapper">               
+                <span id="countDownText">{{row.merchant_name}}</span>
+            </div>
+          </td>
+          <td>
+            <div class="wrapper">               
+                <span id="countDownText">{{row.merchant_address}}</span>
+            </div>
+          </td>
+          <td>
+            <div class="wrapper">               
+                <span id="countDownText">{{row.transaction_currency + ' ' + row.transaction_amount}}</span>
+            </div>
+          </td>
+          <td>
+            <div class="wrapper">               
+                <span id="countDownText">{{row.create_time | date:'medium'}}</span>
+            </div>
+          </td>
+        </tr>
+      </table>
+    <br>-->
+  </div>
+
+</body>
+
+</html>

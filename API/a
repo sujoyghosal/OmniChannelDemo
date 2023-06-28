@@ -1,0 +1,11 @@
+{
+    "username": "Sujoy Ghosal",
+    "useremail": "sujoy.ghosal@gmail.com",
+    "userphone": 9876543210,
+    "merchant_name": "Adidas",
+    "merchant_email": "adidas@terminal21pattaya.com",
+    "merchant_phone": 887654433221,
+    "merchant_address": "Adidas, Terminal 21 Mall, 4th Floor, Pattaya",
+    "transaction_amount": 3509.75,
+    "transaction_currency": "TBH"
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Freecycle - Login</title>
+  <script src="https://kit.fontawesome.com/72f4710995.js" crossorigin="anonymous"></script>
+  <style>
+    body {
+      background-color: #000007;
+    }
+
+    p,
+    h2 {
+      color: rgb(46, 233, 17);
+    }
+
+  </style>
+</head>
+
+<body ng-app="myApp" ng-controller="DashboardCtrl">
+  <div class="container">
+
+    <div id="login">
+      <div class="vl"></div>
+      <form name="myForm" autocomplete="on" novalidate>
+        <h2>Please Sign In or Register</h2>
+        <!--<img src="img/LoginIcon.png">-->
+        <div class="vl"></div>
+        <p>
+          <input type="text" name="username" class="form-control input-md" ng-model="login.email" placeholder="Email" value="" ng-required="true">
+          <p class="isa_error" ng-show="myForm.username.$dirty && myForm.username.$invalid"></p>
+        </p>
+        <!-- JS because of IE support; better: placeholder="Username" -->
+        <p>
+          <input name="password" type="password" class="form-control input-md" ng-model="login.password" ng-minlength="6" placeholder="Password" value="" ng-required="true">
+          <p class="isa_error " ng-show="myForm.password.$dirty && myForm.password.$invalid "></p>
+        </p>
+        <!-- JS because of IE support; better: placeholder="Password " -->
+        <p>
+          <button type="button" class="btn btn-success btn-xl" ng-click="Login2(login); spinner=true;" ng-disabled="myForm.username.$invalid|| myForm.password.$invalid ">Sign In</button>
+          <br>
+          <center /> {{loginResult}}
+        </p>
+        <p>Or <a href="#/signup ">Sign Up</a></p>
+        <p>&nbsp;<a href="#/resetpw ">Forgot Password</a></p>
+        <center /><i ng-show="spinner " class="fa fa-circle-o-notch fa-spin "></i>
+      </form>
+    </div>
+    <!-- end login -->
+
+  </div>
+</body>
+
+</html>

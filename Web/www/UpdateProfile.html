@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Freecycle</title>
+</head>
+
+<body ng-app="myApp">
+  <br>
+  <br>
+  <div class="container">
+    <center>
+      <form class="form-horizontal" ng-controller="DashboardCtrl" name="myForm">
+        <legend>
+          <h4 />UPDATE YOUR INFO
+        </legend>
+        <br>
+        <p ng-show="login_email">
+          <input type="text" size="20" ng-model="user.fullname" placeholder={{login_fullname}} ng-readonly="true">
+        </p>
+        <p ng-show="login_email">
+          <input type="email " size="20" ng-model="user.email" placeholder={{login_email}} ng-readonly="true">
+        </p>
+        <p ng-show="!login_email">
+          <input type="email " size="20" ng-model="user.email" placeholder="Email" ng-readonly="false">
+        </p>
+        <!-- JS because of IE support; better: placeholder="Username " -->
+        <p ng-show="!login_email">
+          <input type="password" size="20" ng-model="user.password" placeholder="Password">
+        </p>
+        <!-- 
+                <p ng-show="login_email">
+                    <input type="text " size="20" ng-model="user.phone" autocomplete="off" placeholder={{login_phone}}>
+                </p>
+                <p ng-show="login_email">
+                    <input type="text" size="20" id="address " placeholder={{login_address}} autocomplete="off" name="address" ng-model="user.address">
+                </p>
+                 -->
+        <p>
+          <input type="button" value="SUBMIT " ng-click="UpdateUser(user)">
+          <br>{{result}}
+        </p>
+        <center /><i ng-show="spinner" class="fa fa-circle-o-notch fa-spin"></i>
+      </form>
+    </center>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>BBL OmniChannel Demo</title>
+  <style>
+     body {
+      background-color: #000007;
+    }
+
+    
+    h2 {
+      color: rgb(46, 233, 17);
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      font-size: large;
+      font-weight: 200;
+    }
+    h4 {
+      color: rgb(17, 211, 233);
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      font-size: medium;
+      font-weight: 200;
+    }
+    h1 {
+      color: rgb(46, 233, 17);
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      font-weight: 200;
+    }
+  </style>
+</head>
+
+<body ng-app="myApp" ng-controller="DashboardCtrl">
+
+  <br>
+  <br>
+  <div class="container">
+    <div id="login">
+      <center>
+        <form class="form-horizontal" name="myForm">
+          <legend>
+            <h4>Move Money | Register Payee</h4>
+          </legend>
+          <br>
+          <p>
+            <input type="text" class="form-control" name="name" ng-blur="StoreFormData()" ng-model="payee.name" placeholder="Name" ng-minlength="4" value="{{payee.name}}" ng-required="true">
+            <span class="help-block" ng-show="myForm.name.$dirty && myForm.name.$invalid">minimum length 4</span>
+          </p>
+          <p>
+            <input type="tel" class="form-control" name="phone" ng-blur="StoreFormData()" ng-model="payee.phone" placeholder="Phone" value="Phone" ng-required="true">
+            <span class="help-block" ng-show="myForm.phone.$dirty && myForm.phone.$invalid">e.g. 9876543210</span>
+          </p>
+          <p>
+            <input type="email" class="form-control" name="email" ng-blur="StoreFormData()" ng-model="payee.email" placeholder="Email" value="EMail" ng-required="true">
+            <span class="help-block" ng-show="myForm.email.$dirty && myForm.email.$invalid">e.g. abcd@xyz.com</span>
+          </p>
+          <p>
+            <input type="text" class="form-control" name="bank_name" ng-blur="StoreFormData()" ng-model="payee.bank_name" placeholder="Bank Name" ng-minlength="4" value="Bank Name" ng-required="true">
+            <span class="help-block" ng-show="myForm.bank_name.$dirty && myForm.bank_name.$invalid">minimum length 4</span>
+          </p> 
+          <p>
+            <input type="text" class="form-control" name="ifsc" ng-blur="StoreFormData()" ng-model="payee.ifsc" placeholder="IFSC Code" ng-minlength="4">
+            <span class="help-block" ng-show="myForm.ifsc.$dirty && myForm.ifsc.$invalid">minimum length 4</span>
+          </p>
+          <p>
+            <input type="text" class="form-control" name="account_number" ng-blur="StoreFormData()" ng-model="payee.account_number" placeholder="Account Number" ng-minlength="4">
+            <span class="help-block" ng-show="myForm.account_number.$dirty && myForm.account_number.$invalid">minimum length 4</span>
+          </p>
+          <!-- JS because of IE support; better: placeholder="Password" -->
+          <p>
+            <input type="button" value="SUBMIT" ng-click="RegisterPayee(payee); spinner = true;" ng-disabled="myForm.name.$invalid||  myForm.email.$invalid ||  myForm.phone.$invalid || 
+                        myForm.address.$invalid || myForm.password.$invalid">{{result}}
+          </p>
+          <center /><i ng-show="spinner" class="fa fa-circle-o-notch fa-spin"></i>
+        </form>
+      </center>
+    </div>
+    <!-- end login -->
+    {{result}}
+  </div>
+
+</body>
+
+</html>
+
+</body>
+
+</html>

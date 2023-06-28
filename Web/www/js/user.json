@@ -1,0 +1,28 @@
+{
+  "user": [
+    {
+      "_id": "649ac48172453be1d9c28af8",
+      "email": "joyitag@gmail.com",
+      "form_data": {
+        "name": "Joyita Ghosal",
+        "phone": "967529659265",
+        "email": "joyitag@gmail.com",
+        "bank_name": "Citi"
+      },
+      "form_name": "RegisterPayee",
+      "form_type": "Form",
+      "jouney_last_modified": "2023-06-27T13:34:58.130Z",
+      "journey_description": "Register a new payee",
+      "journey_id": "RegisterPayee",
+      "journey_name": "RegisterPayee",
+      "journey_status": "Started",
+      "journey_type": "Payment",
+      "screen_description": "Register a new payee",
+      "screen_last_modified": "2023-06-27T13:34:58.130Z",
+      "screen_name": "RegisterPayee",
+      "screen_status": "Started",
+      "screen_type": "Form",
+      "username": "Joyita Singh"
+    }
+  ]
+}

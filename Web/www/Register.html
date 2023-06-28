@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Freecycle</title>
+</head>
+
+<body ng-app="myApp" ng-controller="DashboardCtrl">
+
+  <br>
+  <br>
+  <div class="container">
+    <div id="login">
+      <center>
+        <form class="form-horizontal" name="myForm">
+          <legend>
+            <h4 />Sign-up
+          </legend>
+          <br>
+          <p>
+            <input type="text" class="form-control" name="name" ng-model="user.name" placeholder="Name" ng-minlength="4" value="Full Name" ng-required="true">
+            <span class="help-block" ng-show="myForm.name.$dirty && myForm.name.$invalid">minimum length 4</span>
+          </p>
+          <p>
+            <input type="tel" class="form-control" name="phone" ng-model="user.phone" placeholder="Phone" value="Phone" ng-required="true">
+            <span class="help-block" ng-show="myForm.phone.$dirty && myForm.phone.$invalid">e.g. 9876543210</span>
+          </p>
+          <p>
+            <input type="email" class="form-control" name="email" ng-model="user.email" placeholder="Email" value="EMail" ng-required="true">
+            <span class="help-block" ng-show="myForm.email.$dirty && myForm.email.$invalid">e.g. abcd@xyz.com</span>
+          </p>
+          <!-- JS because of IE support; better: placeholder="Username" -->
+          <p>
+            <input type="password" class="form-control" name="password" ng-model="user.password" placeholder="Password" value="Password" ng-minlength="6" ng-required="true">
+            <span class="help-block" ng-show="myForm.password.$dirty && myForm.password.$invalid">minimum length 6</span>
+          </p>
+          <!--
+                    <p>
+                        <input type="text" class="form-control" ng-minlength="10" ng-maxlength="20" id="inputPhone" name="phone" placeholder="&#xf10b; Phone e.g. +091 xxx-xxxxxxx" ng-pattern="/^\+?\d{3}[- ]?\d{3}[- ]?\d{7}$/" ng-model="user.phone" ng-required="true">
+                         <span class="error" ng-show="myForm.phone.$error.pattern">Please match pattern [+091-123-4567890 || 091-123-4567890]</span>
+
+                    </p>
+                    <p>
+                        <input type="text" name="address" class="form-control" ng-minlength="10" placeholder="&#xf041; Address e.g. Park Street, Kolkata" ng-model="user.address" ng-required="true">
+                        <span class="help-block" ng-show="myForm.address.$dirty && myForm.address.$invalid">Invalid Address</span>
+                    </p> -->
+          <p>
+            <input type="text" class="form-control" name="org" ng-model="user.org" placeholder="Organization" ng-minlength="4">
+            <span class="help-block" ng-show="myForm.org.$dirty && myForm.org.$invalid">minimum length 4</span>
+          </p>
+          <p><input type="checkbox" name="ngo" ng-model="user.ngo">&nbsp;&nbsp;<i class="fa fa-plus"></i> NGO
+          </p>
+          <!-- JS because of IE support; better: placeholder="Password" -->
+          <p>
+            <input type="button" value="SUBMIT" ng-click="CreateUser(user); spinner = true;" ng-disabled="myForm.name.$invalid||  myForm.email.$invalid ||  myForm.phone.$invalid || 
+                        myForm.address.$invalid || myForm.password.$invalid">{{result}}
+          </p>
+          <center /><i ng-show="spinner" class="fa fa-circle-o-notch fa-spin"></i>
+        </form>
+      </center>
+    </div>
+    <!-- end login -->
+    {{result}}
+  </div>
+
+</body>
+
+</html>
+
+</body>
+
+</html>

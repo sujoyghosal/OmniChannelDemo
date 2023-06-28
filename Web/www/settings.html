@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>FreeCycle</title>
+</head>
+
+<body>
+
+  <html lang="en-US">
+
+  <body ng-app="myApp">
+
+    <div class="container">
+
+      <div id="login">
+
+        <form class="form-horizontal" ng-controller="DashboardCtrl" name="myForm" autocomplete="on" novalidate>
+
+          <center>
+            <legend>SETTINGS</legend>
+            <center>
+              <br>
+              <fieldset class="clearfix:after">
+                <p>{{'CURRENT SETTINGS: \nPUSH ON=' + settings.pushon + ',\nStart From: ' + settings.pushstarttimehrs + ':' + settings.pushstarttimemin + ',\nTill: ' + settings.pushstoptimehrs + ':' + settings.pushstoptimemin}}
+
+                  <div>
+                    <label>Turn On Push Notification</label>
+                    <input name="PushToggle" ng-model="settings.pushon" type="checkbox" class="form-control input-md" checked>
+                    <br>
+                    <label>Start Notifications From: [HH:mm]</label>
+                    <input id="time" name="time" ng-model="settings.fromtime" ng-minlength="2" type="time" placeholder="Notification Start Time (GMT)" class="form-control input-md" ng-required="true">
+                    <br>
+                    <label>Stop Notifications After: [HH:mm]</label>
+                    <input id="time" name="time" ng-model="settings.totime" ng-minlength="2" type="time" placeholder="Stop notifications at (GMT)" class="form-control input-md" ng-required="true">
+                    <br>
+                  </div>
+                  <input type="button" name="submit" value="SAVE" ng-click="SendSettings(settings)">
+                  <br>
+                  <i ng-show="spinner " class="fa fa-circle-o-notch fa-spin "></i>
+                  <center /><br> {{result}}<br>
+                  <p>SETTINGS WILL TAKE EFFECT NEXT TIME YOU LOGIN.</p>
+                </p>
+                <center />
+              </fieldset>
+              <br class='clear'>
+        </form>
+      </div>
+      <!-- end login -->
+    </div>
+  </body>
+
+  </html>

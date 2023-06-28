@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+
+<head>
+  <title>WebSocket Demo</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-route.min.js"></script>
+  <script src="https://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.5.0.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui/0.4.0/angular-ui.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-notification/0.3.6/angular-ui-notification.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
+  <script src="js/myappangular.js"></script>
+  <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+  <script src="https://kit.fontawesome.com/72f4710995.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-notification/0.3.6/angular-ui-notification.min.css">
+  <script>
+    // Script to open and close sidebar
+    function w3_open() {
+      document.getElementById("mySidebar").style.display = "block";
+    }
+
+    function w3_close() {
+      document.getElementById("mySidebar").style.display = "none";
+    }
+    $(function() {
+      var navMain = $(".navbar-collapse"); // avoid dependency on #id
+      // "a:not([data-toggle])" - to avoid issues caused
+      // when you have dropdown inside navbar
+      navMain.on("click", "a:not([data-toggle])", null, function() {
+        navMain.collapse('hide');
+      });
+    });
+
+  </script>
+
+  <style>
+    header {
+      padding: 32px;
+    }
+
+    .style-logo {
+      margin-left: auto;
+      margin-right: auto;
+      display: block;
+    }
+
+    .style-nav ul {
+      list-style-type: none;
+    }
+
+    .style-nav ul li a {
+      text-decoration: none;
+      color: #2F322A;
+      text-align: center;
+      display: block;
+      /*text-transform: uppercase;*/
+      padding-top: 20px;
+      padding-right: 40px;
+    }
+
+    @media (max-width: 992px) {
+      .navbar-header {
+        float: none;
+      }
+
+      .navbar-left,
+      .navbar-right {
+        float: none !important;
+      }
+
+      .navbar-toggle {
+        display: block;
+      }
+
+      .navbar-collapse {
+        border-top: 1px solid transparent;
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+      }
+
+      .navbar-fixed-top {
+        top: 0;
+        border-width: 0 0 1px;
+      }
+
+      .navbar-collapse.collapse {
+        display: none !important;
+      }
+
+      .navbar-nav {
+        float: none !important;
+        margin-top: 7.5px;
+      }
+
+      .navbar-nav>li {
+        float: none;
+      }
+
+      .navbar-nav>li>a {
+        padding-top: 10px;
+        padding-bottom: 10px;
+      }
+
+      .collapse.in {
+        display: block !important;
+      }
+
+      .red_text {
+        font-size: 2.2rem !important;
+        color: red;
+      }
+    }
+
+    b.important {
+      color: green;
+    }
+
+    b.events {
+      color: red;
+    }
+
+    /*notifications badge*/
+
+    .buttonnotification {
+      display: inline-block;
+      text-decoration: none;
+      padding: 0px 0px;
+    }
+
+    [data-notifications] {
+      position: relative;
+    }
+
+    [data-notifications]:after {
+      content: attr(data-notifications);
+      position: relative;
+      background: red;
+      border-radius: 50%;
+      display: inline-block;
+      padding: 0.3em;
+      color: #f2f2f2;
+      right: -10px;
+      top: -10px;
+    }
+
+    .fieldset-auto-width {
+      display: inline-block;
+    }
+
+    #center {
+      display: table-row;
+    }
+
+    #center>div {
+      display: table-cell;
+      /*border: solid #55A 1px;
+            background-color: #FFF;*/
+      align-self: auto;
+    }
+
+    body {
+      background-color: #000007;
+    }
+
+    header {
+      background-color: #000007;
+    }
+
+    h4 {
+      color: #0bd73a;
+    }
+
+  </style>
+  <script>
+    function myFunction() {
+      var x = document.getElementById("myTopnav");
+      if (x.className === "topnav") {
+        x.className += " responsive";
+      } else {
+        x.className = "topnav";
+      }
+    };
+
+  </script>
+</head>
+
+<body>
+
+  <div ng-controller="DashboardCtrl " class="container ">
+    <div class="col-md-9 ">
+      <div ng-view></div>
+    </div>
+  </div>
+</body>
+
+</html>

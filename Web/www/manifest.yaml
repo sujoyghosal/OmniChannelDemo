@@ -1,0 +1,4 @@
+applications:
+  - name: TranslateWeb
+    random-route: true
+    memory: 128M
